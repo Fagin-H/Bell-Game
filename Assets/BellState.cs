@@ -26,5 +26,44 @@ public class BellState : MonoBehaviour
         //This makes the text reflect the current state, if the state is changed this will automaticly display the correct text.
         textMeshPro.text = "Bell State: |" + chars[state[0, 0]] + chars[state[1, 0]] + ">+|" + chars[state[0, 1]] + chars[state[1, 1]] + ">";
     }
+    
+    public void InvertState(int characterNum)
+    {
+        if (state[characterNum, 0] == 0 || state[characterNum, 0] == 2)
+        {
+            state[characterNum, 0] = state[characterNum, 0] + 1;
+        }
+        else
+        {
+            state[characterNum, 0] = state[characterNum, 0] - 1;
+        }
+        if (state[characterNum, 1] == 0 || state[characterNum, 1] == 2)
+        {
+            state[characterNum, 1] = state[characterNum, 1] + 1;
+        }
+        else
+        {
+            state[characterNum, 1] = state[characterNum, 1] - 1;
+        }
+    }
 
+    public void RotateState(int characterNum)
+    {
+        if (state[characterNum, 0] == 0 || state[characterNum, 0] == 1)
+        {
+            state[characterNum, 0] = state[characterNum, 0] + 2;
+        }
+        else
+        {
+            state[characterNum, 0] = state[characterNum, 0] - 2;
+        }
+        if (state[characterNum, 1] == 0 || state[characterNum, 1] == 1)
+        {
+            state[characterNum, 1] = state[characterNum, 1] + 2;
+        }
+        else
+        {
+            state[characterNum, 1] = state[characterNum, 1] - 2;
+        }
+    }
 }

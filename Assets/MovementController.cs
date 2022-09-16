@@ -6,7 +6,7 @@ public class MovementController : MonoBehaviour
 {
     //Gives each character a number to identify them and which state or qubit they relate to
     [SerializeField]
-    private int characterNum;
+    public int characterNum;
     //Gives access to the BellState values
     [SerializeField]
     private BellState bellState;
