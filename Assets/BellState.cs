@@ -27,6 +27,8 @@ public class BellState : MonoBehaviour
         textMeshPro.text = "Bell State: |" + chars[state[0, 0]] + chars[state[1, 0]] + ">+|" + chars[state[0, 1]] + chars[state[1, 1]] + ">";
     }
     
+    //Inverts the current state, turns 0 into 1, 1 into 0, + into - and - into +. This is not how an actual X gate works as it would not change the + into - or - into +. But as we actually have 3 quibits just 1 is hidden
+    //this is ok. And to non quantum people this will make more sense to them. We can update in the future to make it more accurate if we wish.
     public void InvertState(int characterNum)
     {
         if (state[characterNum, 0] == 0 || state[characterNum, 0] == 2)
@@ -47,6 +49,7 @@ public class BellState : MonoBehaviour
         }
     }
 
+    //Rotates the state, turns 0 into +, + into 0, 1 into -, and - into +.
     public void RotateState(int characterNum)
     {
         if (state[characterNum, 0] == 0 || state[characterNum, 0] == 1)
