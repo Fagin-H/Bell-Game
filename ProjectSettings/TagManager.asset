@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: floor
+    uniqueID: 2817300785
+    locked: 0
+  - name: target
+    uniqueID: 2015695393
+    locked: 0
+  - name: walls
+    uniqueID: 1712872057
+    locked: 0
+  - name: furniture
+    uniqueID: 2729375613
+    locked: 0
+  - name: details
+    uniqueID: 3359104639
+    locked: 0
+  - name: game objects
+    uniqueID: 3090090523
+    locked: 0
