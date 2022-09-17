@@ -91,4 +91,32 @@ public class BellState : MonoBehaviour
             state[characterNum, 1] = state[characterNum, 1] - 2;
         }
     }
+
+    //Player stepping on CNOT is target and other is the control player
+    public void CNOTGate(int targetNum, int controlNum)
+    {
+        if (state[controlNum, 0] == 1)
+        {
+            if (state[targetNum, 0] == 0)
+            {
+                state[targetNum, 0] = state[targetNum, 0] + 1;
+            }
+            else
+            {
+                state[targetNum, 0] = state[targetNum, 0] - 1;
+            }
+        }
+
+        if (state[controlNum, 1] == 1)
+        {
+            if (state[targetNum, 1] == 0)
+            {
+                state[targetNum, 1] = state[targetNum, 1] + 1;
+            }
+            else
+            {
+                state[targetNum, 1] = state[targetNum, 1] - 1;
+            }
+        }
+    }
 }
