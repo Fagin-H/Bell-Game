@@ -23,6 +23,6 @@ public class HGate : MonoBehaviour
     {
         int character = col.GetComponent<MovementController>().characterNum;
 
-        bellState.RotateState(character);
+        bellState.HGate(character);
     }
 }

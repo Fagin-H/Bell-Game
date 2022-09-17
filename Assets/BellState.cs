@@ -27,30 +27,52 @@ public class BellState : MonoBehaviour
         textMeshPro.text = "Bell State: |" + chars[state[0, 0]] + chars[state[1, 0]] + ">+|" + chars[state[0, 1]] + chars[state[1, 1]] + ">";
     }
     
-    //Inverts the current state, turns 0 into 1, 1 into 0, + into - and - into +. This is not how an actual X gate works as it would not change the + into - or - into +. But as we actually have 3 quibits just 1 is hidden
-    //this is ok. And to non quantum people this will make more sense to them. We can update in the future to make it more accurate if we wish.
-    public void InvertState(int characterNum)
+    //Inverts the current state, turns 0 into 1, 1 into 0.
+    public void XGate(int characterNum)
     {
-        if (state[characterNum, 0] == 0 || state[characterNum, 0] == 2)
+        if (state[characterNum, 0] == 0)
         {
             state[characterNum, 0] = state[characterNum, 0] + 1;
         }
-        else
+        else if (state[characterNum, 0] == 1)
         {
             state[characterNum, 0] = state[characterNum, 0] - 1;
         }
-        if (state[characterNum, 1] == 0 || state[characterNum, 1] == 2)
+
+        if (state[characterNum, 1] == 0)
         {
             state[characterNum, 1] = state[characterNum, 1] + 1;
         }
-        else
+        else if (state[characterNum, 1] == 1)
+        {
+            state[characterNum, 1] = state[characterNum, 1] - 1;
+        }
+    }
+
+    //Inverts the current state in the +- basis, turns + into -, - into +.
+    public void YGate(int characterNum)
+    {
+        if (state[characterNum, 0] == 2)
+        {
+            state[characterNum, 0] = state[characterNum, 0] + 1;
+        }
+        else if (state[characterNum, 0] == 3)
+        {
+            state[characterNum, 0] = state[characterNum, 0] - 1;
+        }
+
+        if (state[characterNum, 1] == 2)
+        {
+            state[characterNum, 1] = state[characterNum, 1] + 1;
+        }
+        else if (state[characterNum, 1] == 3)
         {
             state[characterNum, 1] = state[characterNum, 1] - 1;
         }
     }
 
     //Rotates the state, turns 0 into +, + into 0, 1 into -, and - into +.
-    public void RotateState(int characterNum)
+    public void HGate(int characterNum)
     {
         if (state[characterNum, 0] == 0 || state[characterNum, 0] == 1)
         {
