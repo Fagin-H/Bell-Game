@@ -8,6 +8,8 @@ public class MovementController : MonoBehaviour
     //Gives each character a number to identify them and which state or qubit they relate to
     public int characterNum;
     public Animator animator;
+    public PauseMenu pauseMenu;
+    public EndMenu endMenu;
     //Gives access to the BellState values
     [SerializeField]
     private BellState bellState;
@@ -29,25 +31,29 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Will call the Move function when a key is pressed
-        if (Input.GetKeyDown("w") || Input.GetKeyDown("up"))
+        if (!pauseMenu.GamePaused && !endMenu.isOver)
         {
-            Move(0);
-        }
 
-        if (Input.GetKeyDown("d") || Input.GetKeyDown("right"))
-        {
-            Move(1);
-        }
+            //Will call the Move function when a key is pressed
+            if (Input.GetKeyDown("w") || Input.GetKeyDown("up"))
+            {
+                Move(0);
+            }
 
-        if (Input.GetKeyDown("s") || Input.GetKeyDown("down"))
-        {
-            Move(2);
-        }
+            if (Input.GetKeyDown("d") || Input.GetKeyDown("right"))
+            {
+                Move(1);
+            }
 
-        if (Input.GetKeyDown("a") || Input.GetKeyDown("left"))
-        {
-            Move(3);
+            if (Input.GetKeyDown("s") || Input.GetKeyDown("down"))
+            {
+                Move(2);
+            }
+
+            if (Input.GetKeyDown("a") || Input.GetKeyDown("left"))
+            {
+                Move(3);
+            }
         }
     }
 
