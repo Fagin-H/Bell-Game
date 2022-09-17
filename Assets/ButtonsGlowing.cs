@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtonsGlowing : MonoBehaviour
 {
-    public GameObject object;
+    public GameObject glowImage;
 
     // Update is called once per frame
     void Update()
@@ -14,7 +14,7 @@ public class ButtonsGlowing : MonoBehaviour
 
     public void TurnOnGlowing()
     {
-      object.SetActive(true);
+        glowImage.SetActive(true);
     }
     public void TurnOffGlowing()
     {}
