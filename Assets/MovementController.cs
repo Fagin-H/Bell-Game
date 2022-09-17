@@ -6,48 +6,54 @@ using UnityEngine.Tilemaps;
 public class MovementController : MonoBehaviour
 {
     //Gives each character a number to identify them and which state or qubit they relate to
-    [SerializeField]
     public int characterNum;
+    public Animator animator;
+    public PauseMenu pauseMenu;
+    public EndMenu endMenu;
     //Gives access to the BellState values
     [SerializeField]
     private BellState bellState;
 
     //Gives access to the tilemap and tiles so it can make changes as the player moves.
     public WinConChecker winCon;
-    public Tile correctTile;
     public Tile targetTile;
-    public Tile wrongTile;
+    public Tile catTile;
+    public Tile dogTile;
     public Tilemap targetTilemap;
-    public Tilemap currentTilemap;
 
     // Start is called before the first frame update
     void Start()
     {
-        ReplaceTile();
+        animator.SetInteger("Character", characterNum);
+        CheckTile();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Will call the Move function when a key is pressed
-        if (Input.GetKeyDown("w") || Input.GetKeyDown("up"))
+        if (!pauseMenu.GamePaused && !endMenu.isOver)
         {
-            Move(0);
-        }
 
-        if (Input.GetKeyDown("d") || Input.GetKeyDown("right"))
-        {
-            Move(1);
-        }
+            //Will call the Move function when a key is pressed
+            if (Input.GetKeyDown("w") || Input.GetKeyDown("up"))
+            {
+                Move(0);
+            }
 
-        if (Input.GetKeyDown("s") || Input.GetKeyDown("down"))
-        {
-            Move(2);
-        }
+            if (Input.GetKeyDown("d") || Input.GetKeyDown("right"))
+            {
+                Move(1);
+            }
 
-        if (Input.GetKeyDown("a") || Input.GetKeyDown("left"))
-        {
-            Move(3);
+            if (Input.GetKeyDown("s") || Input.GetKeyDown("down"))
+            {
+                Move(2);
+            }
+
+            if (Input.GetKeyDown("a") || Input.GetKeyDown("left"))
+            {
+                Move(3);
+            }
         }
     }
 
@@ -76,26 +82,32 @@ public class MovementController : MonoBehaviour
 
         //Moves the character in the correct direction
         transform.Translate(movements[keyPressed]);
-        ReplaceTile();
+        CheckTile();
     }
 
     //At the start and every time the character moves the tiles will be updated
-    private void ReplaceTile()
+    private void CheckTile()
     {
-        //Get the current tiles for the target tilemap and the current tilemap
+        //Get the current tile for the target tilemap
         Vector3Int currentCellTarget = targetTilemap.WorldToCell(transform.position);
-        Vector3Int currentCellCurrent = currentTilemap.WorldToCell(transform.position);
 
-        if (targetTilemap.GetTile<Tile>(currentCellTarget) == wrongTile)
+        if (targetTilemap.GetTile<Tile>(currentCellTarget) == null)
         {
-            //If a character goes over an incorrect tile they fail the level and the tile is replaced with null so you can see the red tile underneath
+            //If a character goes over an incorrect tile they fail the level
             winCon.hasFailed = true;
-            currentTilemap.SetTile(currentCellCurrent, null);
         }
-        else if (currentTilemap.GetTile<Tile>(currentCellCurrent) == null && targetTilemap.GetTile<Tile>(currentCellTarget) == targetTile)
+        else if (targetTilemap.GetTile<Tile>(currentCellTarget) == targetTile)
         {
             //if they dont go over an incorrect tile and the new tile has not alread been walked on before, the tile is replaced with a yellow tile and the number of correct tiles is increased
-            currentTilemap.SetTile(currentCellCurrent, correctTile);
+            if (characterNum == 0)
+            {
+                targetTilemap.SetTile(currentCellTarget, catTile);
+            }
+            else
+            {
+                targetTilemap.SetTile(currentCellTarget, dogTile);
+            }
+            
             winCon.correctTiles += 1;
         }
         //Checks to see if the player won or lost after the movement

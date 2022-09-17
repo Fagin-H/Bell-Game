@@ -9,7 +9,7 @@ public class WinConChecker : MonoBehaviour
     public int patternLength;
     public int correctTiles = 0;
     public Tilemap targetTilemap;
-    public Tile targetTile;
+    public EndMenu endMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +23,7 @@ public class WinConChecker : MonoBehaviour
             Tile tile = targetTilemap.GetTile<Tile>(pos);
             if (tile != null)
             {
-                if (tile == targetTile)
-                {
-                    amount += 1;
-                }
+                amount += 1;
             }
         }
         patternLength = amount;
@@ -43,11 +40,11 @@ public class WinConChecker : MonoBehaviour
         //Displays a message if you win or lose
         if (hasFailed)
         {
-            Debug.Log("Fail");
+            endMenu.End(false);
         }
         else if (correctTiles == patternLength)
         {
-            Debug.Log("Win!");
+            endMenu.End(true);
         }
        
     }
