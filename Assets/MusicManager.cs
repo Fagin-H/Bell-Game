@@ -8,7 +8,7 @@ public class MusicManager : MonoBehaviour
   private static MusicManager musicInstance;
   void Awake()
   {
-  DontDestroyOnLoad (this);
+  DontDestroyOnLoad(this);
 
   if (musicInstance == null) {
       musicInstance = this;
