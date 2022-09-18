@@ -47,14 +47,11 @@ public class EndMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Debug.Log("Loading menu");
-        Time.timeScale = 1f;
-        //SceneManager.LoadScene()
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quitting game");
         Application.Quit();
     }
 }

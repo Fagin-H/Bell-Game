@@ -6,12 +6,54 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/StartMenu.unity
+    guid: 0462c24e28262612590b270b1680d09b
   - enabled: 1
-    path: Assets/Scenes/Level1Test.unity
-    guid: 4516a0a144e61244d9c70ab1f85cf9ba
+    path: Assets/Scenes/Game Scenes/LivingRoom1.unity
+    guid: 8eb97b08f334eeb45abeafbfafc2f361
   - enabled: 1
-    path: Assets/Scenes/Level2Test.unity
-    guid: 4f45be9e49d067a41a54eb727f5ce91b
+    path: Assets/Scenes/Game Scenes/LivingRoom2.unity
+    guid: 22fe90895c7ae0f4e87aaef2bd1a36b6
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/LivingRoom3.unity
+    guid: 6f213acec96ead14695ad1c799d90e84
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/LivingRoom4.unity
+    guid: 5ef1eb906fac19a42a2e200c40cc9677
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/LivingRoom5.unity
+    guid: 354ada3c729110c40aaf5200b0761ebb
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Kitchen1.unity
+    guid: cba4815ccf93d3742af21d6207bcdad9
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Kitchen2.unity
+    guid: 64fc76fce48cfd34cbc099537df87346
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Kitchen3.unity
+    guid: 00e15954bfae0e542964771c8a458578
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Kitchen4.unity
+    guid: e50cf1e6ea31a2b4e89a5fe6beee4ccf
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Kitchen5.unity
+    guid: 676776e2068d0d8488f71855ebfc2640
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Bedroom1.unity
+    guid: 11264624441e8cc4797254fb666977fb
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Bedroom2.unity
+    guid: 3eb3697b0348ffa4ca52ba8de108b566
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Bedroom3.unity
+    guid: d1f74496acf62964e8fc2f78cd741535
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Bedroom4.unity
+    guid: 82510e2ef223a524db8e4e1fcb84ef34
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Bedroom5.unity
+    guid: 2aa305042667fec4fa2812d97acbdc1d
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 46ca3cb813d556840aab9cb66fc6e22d
   m_configObjects: {}

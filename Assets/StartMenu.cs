@@ -6,49 +6,59 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    public Transform levelsParent;
-    List<Transform> levels = new();
-    Transform currentLevel = null;
 
-    void Start()
+    public void Play()
     {
-        foreach (Transform child in levelsParent)
-        {
-            levels.Add(child);
-        }
-
-        foreach (Transform i in levels)
-        {
-            i.GetComponent<Button>().onClick.AddListener(() => SelectLevel(i));
-        }
+        SceneManager.LoadScene(1);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayLevel(int level)
     {
-
+        SceneManager.LoadScene(1);
     }
+    //public Transform levelsParent;
+    //List<Transform> levels = new();
+    //Transform currentLevel = null;
 
-    public void SelectLevel(Transform selectedLevel)
-    {
-      Debug.Log("Clicked");
-      currentLevel = selectedLevel;
-      GameObject glowOn =  selectedLevel.Find("Glow").gameObject;
-      Debug.Log(glowOn);
-      glowOn.SetActive(true);
+    //void Start()
+    //{
+    //    foreach (Transform child in levelsParent)
+    //    {
+    //        levels.Add(child);
+    //    }
 
-      foreach (Transform i in levels)
-      {
-        if (i != selectedLevel)
-        {
-          GameObject glowOff = i.Find("Glow").gameObject;
-          glowOff.SetActive(false);
-        }
-      }
-    }
+    //    foreach (Transform i in levels)
+    //    {
+    //        i.GetComponent<Button>().onClick.AddListener(() => SelectLevel(i));
+    //    }
+    //}
 
-    public void PlayLevel()
-    {
-      SceneManager.LoadScene(currentLevel.name, LoadSceneMode.Single);
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+    //}
+
+    //public void SelectLevel(Transform selectedLevel)
+    //{
+    //  Debug.Log("Clicked");
+    //  currentLevel = selectedLevel;
+    //  GameObject glowOn =  selectedLevel.Find("Glow").gameObject;
+    //  Debug.Log(glowOn);
+    //  glowOn.SetActive(true);
+
+    //  foreach (Transform i in levels)
+    //  {
+    //    if (i != selectedLevel)
+    //    {
+    //      GameObject glowOff = i.Find("Glow").gameObject;
+    //      glowOff.SetActive(false);
+    //    }
+    //  }
+    //}
+
+    //public void PlayLevel()
+    //{
+    //  SceneManager.LoadScene(currentLevel.name, LoadSceneMode.Single);
+    //}
 }
