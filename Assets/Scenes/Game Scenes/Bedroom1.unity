@@ -4646,13 +4646,10 @@ PrefabInstance:
         into - and - into + while doing nothing to the 0 and 1 states. You can think
         of it as an X gate for when you''re in the +/- basis.
 
-        
 
-        
-
-        Note
-        that applying gates from right to left, XH is the same as HY. It''s almost
-        as if moving the X gate across the Hadamard gate turns it into a Y gate.'
+        Note that
+        applying gates from right to left, XH is the same as HY. It''s almost as
+        if moving the X gate across the Hadamard gate turns it into a Y gate.'
       objectReference: {fileID: 0}
     - target: {fileID: 3395897740041789384, guid: 502f440696be7f8b1b80395bb0510807, type: 3}
       propertyPath: isUsed
@@ -5159,6 +5156,58 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1439897769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1439897771}
+  - component: {fileID: 1439897770}
+  m_Layer: 0
+  m_Name: Force Camera Ratios
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1439897770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439897769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e188ee899633d0b49870a5ae38b7359d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ratio: {x: 2.39, y: 1}
+  forceRatioOnAwake: 1
+  listenForWindowChanges: 1
+  createCameraForLetterBoxRendering: 1
+  findCamerasAutomatically: 1
+  letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
+  cameras: []
+  letterBoxCamera: {fileID: 0}
+--- !u!4 &1439897771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439897769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1470341121
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1043,25 +1043,17 @@ PrefabInstance:
         for that character by changing a 0 to a + and vice versa, and changing a
         1 to a - and vice versa.
 
-        
 
-        
+        A character with a + state will have their
+        controls rotated clockwise such that
 
-        A character with
-        a + state will have their controls rotated clockwise such that
+        up -> right -> down -> left
+        -> up
 
-        
 
-        up
-        -> right -> down -> left -> up
-
-        
-
-        
-
-        A character
-        with a - state will have their controls rotated the other way. See if you
-        can figure out how to solve this pattern using this new gate.'
+        A character with a - state will have their controls rotated
+        the other way. See if you can figure out how to solve this pattern using
+        this new gate.'
       objectReference: {fileID: 0}
     - target: {fileID: 3395897740041789384, guid: 502f440696be7f8b1b80395bb0510807, type: 3}
       propertyPath: isUsed
@@ -1233,6 +1225,58 @@ PrefabInstance:
       objectReference: {fileID: 1804942627}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 262a714693e483e4495321cd8442e8cc, type: 3}
+--- !u!1 &457812028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 457812030}
+  - component: {fileID: 457812029}
+  m_Layer: 0
+  m_Name: Force Camera Ratios
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &457812029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457812028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e188ee899633d0b49870a5ae38b7359d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ratio: {x: 2.39, y: 1}
+  forceRatioOnAwake: 1
+  listenForWindowChanges: 1
+  createCameraForLetterBoxRendering: 1
+  findCamerasAutomatically: 1
+  letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
+  cameras: []
+  letterBoxCamera: {fileID: 0}
+--- !u!4 &457812030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457812028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &477634262
 PrefabInstance:
   m_ObjectHideFlags: 0

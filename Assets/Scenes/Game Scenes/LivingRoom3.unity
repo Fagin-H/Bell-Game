@@ -397,12 +397,12 @@ PrefabInstance:
       value: "You may have noticed the Bell State at the top of the screen. This
         tells you the current state of the entangled pets. This will be useful to
         understand when the puzzles get more complex and you need to keep track of
-        how each character is going to move.\r\n\r\n\r\nThe state | 00>+| 11> is
-        the default state where both characters act as expected. It is made up of
-        2 parts, each looking like | xy> where x is the state of Schr\xF6dinger's
-        cat and y is the state of Heisenberg's dog. In the first set of numbers,
-        a 0 means the character is acting as normal, a 1 means the character's controls
-        are inverted. Later you will see there are other gates and states to consider
+        how each character is going to move.\r\r\n\r\nThe state | 00>+| 11> is the
+        default state where both characters act as expected. It is made up of 2 parts,
+        each looking like | xy> where x is the state of Schr\xF6dinger's cat and
+        y is the state of Heisenberg's dog. In the first set of numbers, a 0 means
+        the character is acting as normal, a 1 means the character's controls are
+        inverted. Later you will see there are other gates and states to consider
         too."
       objectReference: {fileID: 0}
     - target: {fileID: 3395897740041789384, guid: 502f440696be7f8b1b80395bb0510807, type: 3}
@@ -4156,6 +4156,58 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &869438561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 869438563}
+  - component: {fileID: 869438562}
+  m_Layer: 0
+  m_Name: Force Camera Ratios
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &869438562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869438561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e188ee899633d0b49870a5ae38b7359d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ratio: {x: 2.39, y: 1}
+  forceRatioOnAwake: 1
+  listenForWindowChanges: 1
+  createCameraForLetterBoxRendering: 1
+  findCamerasAutomatically: 1
+  letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
+  cameras: []
+  letterBoxCamera: {fileID: 0}
+--- !u!4 &869438563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869438561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002573241
 GameObject:
   m_ObjectHideFlags: 0
