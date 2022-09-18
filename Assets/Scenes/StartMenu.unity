@@ -767,8 +767,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "This is a game created for the Quantum Game Jam 2022.\r\r\n\r\nLead Designer
-    and Programmer: Fagin Hales\r\r\n(Please include how you want to be credited
-    here)\r\n\r\r\nMusic by Eric Matyas\r\r\nwww.soundimage.org\r\r\n\r\nArtwork
+    and Programmer: Fagin Hales\r\r\nProgrammer: Petra Br\u010Di\u0107\nArtwork designer:
+    Aleksi Jokitalo\nDesign: Spaghettificated\n\r\r\nMusic by Eric Matyas\r\r\nwww.soundimage.org\r\r\n\r\nArtwork
     by:\r\r\nGif - Twitter: @gif_not_jif\r\r\npzUH - Twitter: @pzuh"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.55
+  m_fontSize: 30.45
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
