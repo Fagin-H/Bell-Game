@@ -14,7 +14,7 @@ public class StartMenu : MonoBehaviour
 
     public void PlayLevel(int level)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(level);
     }
     //public Transform levelsParent;
     //List<Transform> levels = new();
